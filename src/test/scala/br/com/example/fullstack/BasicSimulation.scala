@@ -6,7 +6,7 @@ import io.gatling.core.Predef._
 
 class BasicSimulation extends Simulation {
 
-  val searchFeeder = csv("pre-prod/search_worlds.csv").circular
+  //  val searchFeeder = csv("pre-prod/search_worlds.csv").random
 
   val browsingScenario = scenario("Browsing Journey")
     .exec(WebStoreHome.enter)
@@ -16,4 +16,5 @@ class BasicSimulation extends Simulation {
       atOnceUsers(1)
     )
   ).protocols(Protocol.HTTP)
+    .assertions(global.successfulRequests.percent.is(100))
 }
