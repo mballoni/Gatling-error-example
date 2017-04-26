@@ -6,6 +6,8 @@ import io.gatling.core.Predef._
 
 class BasicSimulation extends Simulation {
 
+  val searchFeeder = csv("pre-prod/search_worlds.csv").circular
+
   val browsingScenario = scenario("Browsing Journey")
     .exec(WebStoreHome.enter)
 

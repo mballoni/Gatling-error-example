@@ -1,6 +1,7 @@
 package br.com.example.fullstack.configuration
 
 import io.gatling.http.Predef._
+import io.gatling.core.Predef._
 
 object Protocol {
 
